@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @killteam.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @killteam.description %>
+</p>
+
+<p>
+  <strong>Requisition:</strong>
+  <%= @killteam.requisition %>
+</p>
+
+<p>
+  <strong>Assetcap:</strong>
+  <%= @killteam.assetcap %>
+</p>
+
+<p>
+  <strong>Base:</strong>
+  <%= @killteam.base %>
+</p>
+
+<p>
+  <strong>Factionkeyword:</strong>
+  <%= @killteam.factionkeyword %>
+</p>
+
+<%= link_to 'Edit', edit_killteam_path(@killteam) %> |
+<%= link_to 'Back', killteams_path %>

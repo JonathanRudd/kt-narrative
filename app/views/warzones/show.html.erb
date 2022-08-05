@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @warzone.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @warzone.description %>
+</p>
+
+<%= link_to 'Edit', edit_warzone_path(@warzone) %> |
+<%= link_to 'Back', warzones_path %>

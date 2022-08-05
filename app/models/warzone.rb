@@ -1,0 +1,2 @@
+class Warzone < ApplicationRecord
+end
