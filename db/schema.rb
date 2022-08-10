@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_05_091518) do
+ActiveRecord::Schema.define(version: 2022_08_10_054140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batreps", force: :cascade do |t|
+    t.integer "versus"
+    t.text "report"
+    t.bigint "killteam_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.index ["killteam_id"], name: "index_batreps_on_killteam_id"
+  end
 
   create_table "killteams", force: :cascade do |t|
     t.string "name"
@@ -45,4 +55,5 @@ ActiveRecord::Schema.define(version: 2022_08_05_091518) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "batreps", "killteams"
 end
