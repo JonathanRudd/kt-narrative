@@ -8,6 +8,7 @@ class KillteamsController < ApplicationController
 
   # GET /killteams/1 or /killteams/1.json
   def show
+    @killteam = Killteam.find(params[:id])
   end
 
   # GET /killteams/new
