@@ -18,6 +18,7 @@ class KillteamsController < ApplicationController
 
   # GET /killteams/1/edit
   def edit
+    @killteam = Killteam.find(params[:id])
   end
 
   # POST /killteams or /killteams.json
@@ -66,6 +67,6 @@ class KillteamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def killteam_params
-      params.require(:killteam).permit(:name, :description, :requisition, :assetcap, :base, :factionkeyword)
+      params.require(:killteam).permit(:name, :description, :requisition, :assetcap, :base, :factionkeyword, images: [])
     end
 end

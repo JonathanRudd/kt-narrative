@@ -30,10 +30,15 @@
   <%= @killteam.factionkeyword %>
 </p>
 
-  <% if @item.images.attached?%>
-    <%= image_tag @killteam.images.first %>
+<div class="imgcontainer" style="width:300px; height: auto;">
+  <% if @killteam.images.attached?%>
+    <div class="ktframe">
+      <%= image_tag(@killteam.images.first, style:'width:100%; height: auto')%>
+    </div>
   <% end %>
+</div>
 
+<br>
 <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
 <%= link_to 'Back', killteams_path %>
 

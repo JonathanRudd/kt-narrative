@@ -1,2 +1,30 @@
 // Import page-specific CSS files here.
 @import "home";
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 40rem);
+  gap: 2rem;
+}
+
+
+.teamcard {
+  width: 100%;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: lightGrey;
+  overflow: hidden;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.flexbox {
+  display: flex;
+}

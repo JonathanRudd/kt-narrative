@@ -1,37 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Killteams</h1>
+<div style="padding-left: 20px; padding-bottom: 10px">
+  <h1>Killteams</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Requisition</th>
-      <th>Assetcap</th>
-      <th>Base</th>
-      <th>Factionkeyword</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <%= link_to 'New Killteam', new_killteam_path %>
+</div>
 
-  <tbody>
+  <div class="grid">
     <% @killteams.each do |killteam| %>
-      <tr>
-        <td><%= killteam.name %></td>
-        <td><%= killteam.description %></td>
-        <td><%= killteam.requisition %></td>
-        <td><%= killteam.assetcap %></td>
-        <td><%= killteam.base %></td>
-        <td><%= killteam.factionkeyword %></td>
-        <td><%= link_to 'Show', killteam %></td>
-        <td><%= link_to 'Edit', edit_killteam_path(killteam) %></td>
-        <td><%= link_to 'Destroy', killteam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="teamcard">
+        <div class="flexbox">
+          <ul class="no-bullets">
+            <li><h4><strong><%= killteam.name %></strong></h4></li>
+            <li><%= killteam.description %></li>
+            <br>
+            <li>Requisition Points: <%= killteam.requisition %></li>
+            <li>Asset Cap: <%= killteam.assetcap %></li>
+            <li>Base: <%= killteam.base %></li>
+            <li>Faction Keyword: <%= killteam.factionkeyword %></li>
+            <br>
+            <li><%= link_to 'Show', killteam %> <%= link_to 'Edit', edit_killteam_path(killteam) %> <%= link_to 'Destroy', killteam, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </div>
+
+        <div style="width:300px; height: auto;">
+          <% if killteam.images.attached?%>
+            <div class="ktframe">
+              <%= image_tag(killteam.images.first, style:'width:100%; height: auto')%>
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <div>
 
 <br>
-
-<%= link_to 'New Killteam', new_killteam_path %>
