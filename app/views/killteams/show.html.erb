@@ -26,11 +26,25 @@
 </p>
 
 <p>
-  <strong>Factionkeyword:</strong>
+  <strong>Faction Keyword:</strong>
   <%= @killteam.factionkeyword %>
 </p>
 
-<%= link_to 'Edit', edit_killteam_path(@killteam) %> |
-<%= link_to 'Back', killteams_path %>
+<div class="grid">
+  <% if @killteam.images.attached?%>
+      <% (0...@killteam.images.count).each do |image| %>
+        <div class="ktframe" style='width:300px; height: 300px'>
+          <%= image_tag(@killteam.images[image], style:'width: 100%; height: auto')%>
+        </div>
+      <% end %>
+  <% end %>
+</div>
+
+<div>
+  <br>
+  <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
+  <%= link_to 'Back', killteams_path %>
+</div>
+<%# <%= link_to 'Battle Reports', killteam_batreps(@killteam) %>
 
 <%= link_to 'Log a new Battle report', new_batrep_path %>
