@@ -7,6 +7,10 @@ team has many attached + zone has many attached
 Design page for team view
 Design page for killzone view
 
+idea: dropdown list of other killteams on showpage links to new batrep page with
+opposing kt id already input.
+
+
 
 Long term targets:
 
