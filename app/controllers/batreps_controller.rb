@@ -8,7 +8,7 @@ class BatrepsController < ApplicationController
   end
 
   def new
-
+    @batrep = Batrep.new
   end
 
   def create

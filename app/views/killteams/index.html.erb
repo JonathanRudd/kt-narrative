@@ -25,10 +25,12 @@
 
         <div style="width:300px; height: auto;">
           <% if killteam.images.attached?%>
-            <div class="ktframe">
-              <%= image_tag(killteam.images.first, style:'width:100%; height: auto')%>
-            </div>
-          <% end %>
+                <% killteam.images.each do |image| %>
+                  <div class="ktframe" style='width:300px; height: 300px'>
+                    <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill%>
+                  </div>
+                <% end %>
+            <% end %>
         </div>
       </div>
     <% end %>
