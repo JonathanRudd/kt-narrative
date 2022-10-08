@@ -42,9 +42,13 @@
 
 <div>
   <br>
-  <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
-  <%= link_to 'Back', killteams_path %>
+    <%= break %>
+  <% if current_user == @killteam.user %>
+    <%=  %>
+    <%= link_to 'Edit', edit_killteam_path(@killteam) %> |
+    <%= link_to 'Back', killteams_path %>
+    <%= link_to 'Log a new Battle report', new_batrep_path %>
+  <% end %>
+
 </div>
 <%# <%= link_to 'Battle Reports', killteam_batreps(@killteam) %>
-
-<%= link_to 'Log a new Battle report', new_batrep_path %>
