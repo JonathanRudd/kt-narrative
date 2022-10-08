@@ -9,7 +9,8 @@ class KillteamsController < ApplicationController
   # GET /killteams/1 or /killteams/1.json
   def show
     @killteam = Killteam.find(params[:id])
-    @killteam.user = current_user
+    # authorize @killteam
+    # @killteam.user = current_user
   end
 
   # GET /killteams/new
@@ -25,7 +26,7 @@ class KillteamsController < ApplicationController
   # POST /killteams or /killteams.json
   def create
     @killteam = Killteam.new(killteam_params)
-    @killteam.user = current_user
+    @killteam.user_id = current_user.id
 
     respond_to do |format|
       if @killteam.save
