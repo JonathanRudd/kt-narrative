@@ -1,11 +1,24 @@
 .teamcard {
+  width: 300px;
+  height: 600px;
   display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-around;
 }
 
 
-.ktframe {
+.ktimgframe {
+  width: 400px;
+  height: 300px;
   display: flex;
   border: 10px;
+}
+
+.infocontainer {
+  display: flex;
+  justify-content: left;
+  align-items: left;
 }
 
 .imagecontainer {

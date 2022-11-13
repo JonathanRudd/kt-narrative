@@ -9,7 +9,7 @@
   <div class="grid">
     <% @killteams.each do |killteam| %>
       <div class="teamcard">
-        <div class="flexbox">
+        <div class="infocontainer">
           <ul class="no-bullets">
             <li><h4><strong><%= killteam.name %></strong></h4></li>
             <li><%= killteam.description %></li>
@@ -32,7 +32,7 @@
         <div class="imagecontainer" style="width:300px; height: auto;">
           <% if killteam.images.attached?%>
                 <% killteam.images.each do |image| %>
-                  <div class="ktframe" style='width: 400px; height: 300px'>
+                  <div class="ktimgframe">
                     <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill%>
                   </div>
                 <% end %>
