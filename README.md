@@ -2,8 +2,8 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 Short term targets:
 
-Add picture attach ability (and cloudinary capability)
-team has many attached + zone has many attached
+Add picture attach ability (and cloudinary capability) x
+team has many attached + zone has many attached ?
 Design page for team view
 Design page for killzone view
 
