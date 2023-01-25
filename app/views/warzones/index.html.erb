@@ -1,29 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Warzones</h1>
+<h1 style="color: white;">Warzones</h1>
 
-<table>
+<table style="color: white;">
   <thead>
-    <tr>
+    <tr style="color: white;">
       <th>Name</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
-
-<div class="planet">
-  <div class="wrap">
-    <div class="background"></div>
-    <div class="clouds"></div>
-  </div>
-  <div class="mask"></div>
-  <div class="highlight highlight1">.  Echo City</div>
-  <div class="highlight highlight2">.  REDACTED</div>
-  <div class="highlight highlight3">.  Outpost Gamma</div>
-</div>
-
-
+  <% planetSites = []  %>
 
   <tbody>
     <% @warzones.each do |warzone| %>
@@ -34,9 +22,29 @@
         <td><%= link_to 'Edit', edit_warzone_path(warzone) %></td>
         <td><%= link_to 'Destroy', warzone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% planetSites.push warzone %>
     <% end %>
   </tbody>
 </table>
+
+
+<div class="planet">
+  <div class="wrap">
+    <div class="background"></div>
+    <div class="clouds"></div>
+  </div>
+  <div class="mask"></div>
+  <div class="highlight highlight1" >
+    <%= link_to planetSites[0].name, planetSites[0] %>
+  </div>
+  <div class="highlight highlight2" >
+    <%= link_to planetSites[1].name, planetSites[1]%>
+  </div>
+  <div class="highlight highlight3">
+    <%# <%= link_to @warzones[2].name, @warzones[2] %>
+  </div>
+</div>
+
 
 <br>
 
