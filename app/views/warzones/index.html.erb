@@ -38,10 +38,16 @@
     <%= link_to planetSites[0].name, planetSites[0] %>
   </div>
   <div class="highlight highlight2" >
+    <% if planetSites.length == 2 %>
     <%= link_to planetSites[1].name, planetSites[1]%>
+    <% end %>
+    <%# <%= else "" %>
   </div>
   <div class="highlight highlight3">
-    <%# <%= link_to @warzones[2].name, @warzones[2] %>
+    <% if planetSites.length == 3 %>
+    <%= link_to planetSites[2].name, planetSites[2]%>
+    <% end %>
+
   </div>
 </div>
 
