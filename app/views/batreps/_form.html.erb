@@ -1,16 +1,14 @@
 
 <%= simple_form_for(@batrep) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
 
   <div class="form-inputs">
     <%= f.input :title, label: 'Report title' %>
     <%= f.input :report %>
 
-    <%# copied code, no idea how it works - collection should be an array of all the killteams%>
-    <%# <% collection = f.object.killteam.map { |killteam| [killteam.name, data: { killteam_id: killteam.killteam_id }] } %>
-    <%= f.input :killteam_id, label: 'Opposing team', as: :select, collection: [[Killteam.first.name, Killteam.first.id], [Killteam.last.name, Killteam.last.id]] %>
-    <%# copied code %>
+
+    <%# <%= f.input :killteam_id, label: 'Opposing team', as: :select, collection: [[Killteam.first.name, Killteam.first.id], [Killteam.last.name, Killteam.last.id]] %> %>
+
 
 
   </div>
